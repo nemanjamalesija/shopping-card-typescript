@@ -68,7 +68,8 @@ function App() {
   const { data, isLoading } = useQuery(['products', 5], fetchProducts);
 
   // FETCH WITH USE EFFECT => PRACTICE
-  /* useEffect(() => {
+
+  useEffect(() => {
     const fetchProducts = async () => {
       return await fetch(`https://fakestoreapi.com/products?limit=5`);
     };
@@ -76,11 +77,7 @@ function App() {
     fetchProducts()
       .then((response) => response.json())
       .then((data) => dispatch({ type: 'SET_PRODUCTS', payload: data }));
-  }, []); */
-
-  useEffect(() => {
-    dispatch({ type: 'SET_PRODUCTS', payload: data });
-  }, [data]);
+  }, []);
 
   console.log(state);
 
