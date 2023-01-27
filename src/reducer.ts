@@ -1,5 +1,5 @@
-import { APIproducts } from './App';
-import { ACTIONS } from './App';
+import { APIproducts } from './constants/initialState';
+import { ACTIONS } from './constants/actions';
 
 const reducer = (state: APIproducts, action: ACTIONS): APIproducts => {
   if (action.type === 'SET_PRODUCTS') {
