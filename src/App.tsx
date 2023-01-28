@@ -4,13 +4,15 @@ import { useQuery } from '@tanstack/react-query';
 import { initialState } from './constants/initialState';
 import Loading from './components/Loading';
 import fetchProducts from './helpers/fetchProducts';
-
-import './App.css';
+import SingleProduct from './components/SingleProduct';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const { data, isLoading } = useQuery(['products', 5], fetchProducts);
+  const { data, isLoading } = useQuery(
+    ['products', 'electronics'],
+    fetchProducts
+  );
 
   ////////////////////////////////////////////
   // FETCH WITH USE EFFECT => PRACTICE
@@ -31,11 +33,20 @@ function App() {
     dispatch({ type: 'SET_PRODUCTS', payload: data });
   }, [data]);
 
-  console.log(state);
-
   if (isLoading) return <Loading />;
 
-  return <div className="App">const</div>;
+  const { cart } = state;
+  console.log(cart);
+
+  return (
+    <div className="App">
+      {cart.map((product) => {
+        return (
+          <SingleProduct key={product.id} {...product} product={product} />
+        );
+      })}
+    </div>
+  );
 }
 
 export default App;

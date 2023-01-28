@@ -1,13 +1,13 @@
 import { QueryFunctionContext } from '@tanstack/react-query';
-type queryParams = [string, number];
+type queryParams = [string, string];
 
 const fetchProducts = async ({
   queryKey,
 }: QueryFunctionContext<queryParams>) => {
-  const numberOfProducts = queryKey[1];
+  const category = queryKey[1];
 
   return await fetch(
-    `https://fakestoreapi.com/products?limit=${numberOfProducts}`
+    `https://fakestoreapi.com/products/category/${category}`
   ).then((response) => response.json());
 };
 

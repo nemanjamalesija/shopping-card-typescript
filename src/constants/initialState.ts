@@ -1,7 +1,6 @@
 export type APIproducts = {
-  cart: [];
-  products: {
-    id: string;
+  cart: {
+    id: number;
     title: string;
     price: number;
     description?: string | undefined;
@@ -14,10 +13,9 @@ export type APIproducts = {
 };
 
 export const initialState: APIproducts = {
-  cart: [],
-  products: [
+  cart: [
     {
-      id: '',
+      id: 1,
       title: '',
       price: 0,
       category: '',
@@ -28,5 +26,6 @@ export const initialState: APIproducts = {
       },
     },
   ],
+
   totalPrice: 0,
 };

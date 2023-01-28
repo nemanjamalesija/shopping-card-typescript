@@ -1,7 +1,7 @@
 export type ACTIONS = {
   type: 'SET_PRODUCTS';
   payload?: {
-    id: string;
+    id: number;
     title: string;
     price: number;
     description?: string | undefined;
