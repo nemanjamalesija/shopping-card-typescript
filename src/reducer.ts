@@ -5,10 +5,20 @@ const reducer = (state: APIproducts, action: ACTIONS): APIproducts => {
   if (action.type === 'SET_PRODUCTS') {
     if (action.payload === undefined) return { ...state };
 
-    return {
-      ...state,
-      cart: [...action.payload],
-    };
+    if (Array.isArray(action.payload))
+      return {
+        ...state,
+        cart: [...action.payload],
+      };
+  }
+
+  if (action.type === 'ADD_PRODUCT') {
+    if (typeof action.payload === 'object' && !Array.isArray(action.payload)) {
+      const newCart = [...state.cart, action.payload];
+      console.log(newCart);
+
+      return { ...state, cart: newCart };
+    }
   }
 
   return state;
