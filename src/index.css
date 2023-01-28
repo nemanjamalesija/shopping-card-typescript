@@ -62,3 +62,51 @@ h3 {
 .product-quantity {
   font-size: 24px;
 }
+
+/* nav */
+
+nav {
+  height: 70px;
+  background-color: #2680c0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  margin-bottom: 150px;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+.nav-div {
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.amount-container {
+  position: relative;
+}
+
+.amount-container-value {
+  position: absolute;
+  top: -10px;
+  right: -16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #85c6f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.total-purchaed {
+  font-size: 24px;
+}
+
+.icon {
+  width: 38px;
+  height: 38px;
+}
