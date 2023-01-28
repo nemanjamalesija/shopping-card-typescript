@@ -64,7 +64,7 @@ function App() {
           </div>
         </div>
       </nav>
-      {cart.map((product) => {
+      {data?.map((product) => {
         return (
           <SingleProduct
             key={product.id}

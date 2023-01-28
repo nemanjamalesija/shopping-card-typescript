@@ -9,5 +9,14 @@ export type ACTIONS = {
         category: string;
         image: string;
         rating: { rate: number; count: number };
-      }[];
+      }[]
+    | {
+        id: number;
+        title: string;
+        price: number;
+        description?: string | undefined;
+        category: string;
+        image: string;
+        rating: { rate: number; count: number };
+      };
 };

@@ -3,7 +3,7 @@ import { ACTIONS } from './constants/actions';
 
 const reducer = (state: APIproducts, action: ACTIONS): APIproducts => {
   if (action.type === 'SET_PRODUCTS') {
-    if (action.payload === undefined) return { ...state };
+    if (!action.payload) return { ...state };
 
     if (Array.isArray(action.payload))
       return {
@@ -15,7 +15,6 @@ const reducer = (state: APIproducts, action: ACTIONS): APIproducts => {
   if (action.type === 'ADD_PRODUCT') {
     if (typeof action.payload === 'object' && !Array.isArray(action.payload)) {
       const newCart = [...state.cart, action.payload];
-      console.log(newCart);
 
       return { ...state, cart: newCart };
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ACTIONS } from '../constants/actions';
-import { singleProduct } from '../constants/initialState';
+import { APIproducts } from '../constants/initialState';
 
 type singleProductProps = {
   category: string;
@@ -20,7 +20,7 @@ type singleProductProps = {
 const SingleProduct = (props: singleProductProps) => {
   const [quantity, setQuantity] = React.useState(1);
 
-  const addProduct = (product: any) => {
+  const addProduct = (product: APIproducts['cart'][number]) => {
     setQuantity((prev) => prev + 1);
     dispatch({ type: 'ADD_PRODUCT', payload: product });
   };

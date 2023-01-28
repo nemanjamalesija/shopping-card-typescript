@@ -1,9 +1,10 @@
 import { QueryFunctionContext } from '@tanstack/react-query';
+import { APIproducts } from '../constants/initialState';
 type queryParams = [string, string];
 
 const fetchProducts = async ({
   queryKey,
-}: QueryFunctionContext<queryParams>) => {
+}: QueryFunctionContext<queryParams>): Promise<APIproducts['cart']> => {
   const category = queryKey[1];
 
   return await fetch(

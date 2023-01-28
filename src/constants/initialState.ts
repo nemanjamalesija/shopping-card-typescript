@@ -12,16 +12,6 @@ export type APIproducts = {
   totalPrice: number;
 };
 
-export type singleProduct = {
-  id: number;
-  title: string;
-  price: number;
-  description?: string | undefined;
-  category: string;
-  image: string;
-  rating: { rate: number; count: number };
-};
-
 export const initialState: APIproducts = {
   cart: [
     {
