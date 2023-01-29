@@ -42,7 +42,10 @@ const SingleProduct = (props: singleProductProps) => {
         <img src={image} alt={title} />
         <div className="single-product-info">
           <h3>{title.slice(0, 50)}</h3>
-          <p className="product-price">{price}$</p>
+          <div className="price-remove-div">
+            <p className="product-price">{price}$</p>
+            <button className="remove-product-btn">remove</button>
+          </div>
         </div>
       </div>
       <div className="single-product-right">
@@ -50,10 +53,38 @@ const SingleProduct = (props: singleProductProps) => {
           className="btn add-quantity"
           onClick={() => addProduct(product)}
         >
-          ⬆
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="icon-product"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75"
+            />
+          </svg>
         </button>
         <span className="product-quantity">{quantity}</span>
-        <button className="btn remove-quantity">⬇</button>
+        <button className="btn remove-quantity">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="icon-product"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   );

@@ -117,11 +117,24 @@ h1 {
 }
 
 button {
-  border-radius: 50%;
   border: none;
   background-color: #d9dddf;
+  cursor: pointer;
 }
 
 button:hover {
   background-color: #c1c4c6;
+}
+
+.btn {
+  border-radius: 50%;
+}
+
+.price-remove-div {
+  display: flex;
+  gap: 10px;
+}
+
+.remove-product-btn {
+  border-radius: 8px;
 }
