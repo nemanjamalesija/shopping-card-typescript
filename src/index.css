@@ -140,10 +140,15 @@ button:hover {
   border-radius: 8px;
 }
 
-.empty-cart {
+.empty-cart,
+.Loading {
   width: 300px;
   margin: 0 auto;
   font-size: 32px;
   font-weight: 500;
   color: #333;
+}
+
+.Loading {
+  margin-top: 300px;
 }
