@@ -110,3 +110,18 @@ h1 {
   width: 38px;
   height: 38px;
 }
+
+.icon-product {
+  width: 24px;
+  height: 24px;
+}
+
+button {
+  border-radius: 50%;
+  border: none;
+  background-color: #d9dddf;
+}
+
+button:hover {
+  background-color: #c1c4c6;
+}
