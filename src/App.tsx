@@ -36,7 +36,6 @@ function App() {
   if (isLoading) return <Loading />;
 
   const { cart } = state;
-  console.log(cart);
 
   return (
     <div className="App">
@@ -64,7 +63,7 @@ function App() {
           </div>
         </div>
       </nav>
-      {data?.map((product) => {
+      {[...new Set(cart)].map((product) => {
         return (
           <SingleProduct
             key={product.id}

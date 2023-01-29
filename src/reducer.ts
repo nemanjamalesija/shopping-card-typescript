@@ -14,10 +14,20 @@ const reducer = (state: APIproducts, action: ACTIONS): APIproducts => {
 
   if (action.type === 'ADD_PRODUCT') {
     if (typeof action.payload === 'object' && !Array.isArray(action.payload)) {
-      const newCart = [...state.cart, action.payload];
+      const newProduct = action.payload;
+
+      const newCart = [...state.cart, newProduct];
 
       return { ...state, cart: newCart };
     }
+  }
+
+  if (action.type === 'REMOVE_PRODUCT' && typeof action.payload === 'number') {
+    const newCart = state.cart.filter(
+      (product) => product.id !== action.payload
+    );
+
+    return { ...state, cart: newCart };
   }
 
   return state;

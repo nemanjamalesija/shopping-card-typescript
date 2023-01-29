@@ -25,6 +25,10 @@ const SingleProduct = (props: singleProductProps) => {
     dispatch({ type: 'ADD_PRODUCT', payload: product });
   };
 
+  const removeProduct = (id: number) => {
+    dispatch({ type: 'REMOVE_PRODUCT', payload: id });
+  };
+
   const {
     product,
     id,
@@ -44,7 +48,12 @@ const SingleProduct = (props: singleProductProps) => {
           <h3>{title.slice(0, 50)}</h3>
           <div className="price-remove-div">
             <p className="product-price">{price}$</p>
-            <button className="remove-product-btn">remove</button>
+            <button
+              className="remove-product-btn"
+              onClick={() => removeProduct(id)}
+            >
+              remove
+            </button>
           </div>
         </div>
       </div>
