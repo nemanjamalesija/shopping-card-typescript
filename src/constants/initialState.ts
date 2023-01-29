@@ -1,13 +1,15 @@
 export type APIproducts = {
-  cart: {
-    id: number;
-    title: string;
-    price: number;
-    description?: string | undefined;
-    category: string;
-    image: string;
-    rating: { rate: number; count: number };
-  }[];
+  cart:
+    | {
+        id: number;
+        title: string;
+        price: number;
+        description?: string | undefined;
+        category: string;
+        quantity?: number;
+        image: string;
+        rating: { rate: number; count: number };
+      }[];
 
   totalPrice: number;
 };

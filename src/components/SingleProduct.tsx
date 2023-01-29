@@ -3,17 +3,11 @@ import { ACTIONS } from '../constants/actions';
 import { APIproducts } from '../constants/initialState';
 
 type singleProductProps = {
-  category: string;
-  description?: string | undefined;
   id: number;
   image: string;
-  rating: {
-    rate: number;
-    count: number;
-  };
   title: string;
   price: number;
-  product: any;
+  product: APIproducts['cart'][number];
   dispatch: React.Dispatch<ACTIONS>;
 };
 
@@ -29,16 +23,7 @@ const SingleProduct = (props: singleProductProps) => {
     dispatch({ type: 'REMOVE_PRODUCT', payload: id });
   };
 
-  const {
-    product,
-    id,
-    category,
-    image,
-    rating: { rate, count },
-    title,
-    price,
-    dispatch,
-  } = props;
+  const { product, id, image, title, price, dispatch } = props;
 
   return (
     <div className="single-product-container">
@@ -78,22 +63,6 @@ const SingleProduct = (props: singleProductProps) => {
           </svg>
         </button>
         <span className="product-quantity">{quantity}</span>
-        <button className="btn remove-quantity">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="icon-product"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75"
-            />
-          </svg>
-        </button>
       </div>
     </div>
   );

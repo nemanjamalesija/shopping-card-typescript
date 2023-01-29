@@ -5,6 +5,7 @@ import { initialState } from './constants/initialState';
 import Loading from './components/Loading';
 import fetchProducts from './helpers/fetchProducts';
 import SingleProduct from './components/SingleProduct';
+import EmptyCard from './components/EmptyCard';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -36,6 +37,7 @@ function App() {
   if (isLoading) return <Loading />;
 
   const { cart } = state;
+  const cartDOM = [...new Set(cart)];
 
   return (
     <div className="App">
@@ -63,7 +65,8 @@ function App() {
           </div>
         </div>
       </nav>
-      {[...new Set(cart)].map((product) => {
+      {cartDOM.length === 0 && <EmptyCard />}
+      {cartDOM.map((product) => {
         return (
           <SingleProduct
             key={product.id}

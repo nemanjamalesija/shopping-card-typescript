@@ -1,5 +1,5 @@
 export type ACTIONS = {
-  type: 'SET_PRODUCTS' | 'ADD_PRODUCT' | 'REMOVE_PRODUCT';
+  type: 'SET_PRODUCTS' | 'ADD_PRODUCT' | 'REMOVE_PRODUCT' | 'DELETE_PRODUCT';
   payload?:
     | number
     | {
